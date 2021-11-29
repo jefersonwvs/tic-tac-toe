@@ -2,7 +2,7 @@
    margin: 0px;
    padding: 0px;
    box-sizing: border-box;
-   font-family: "Ubuntu";
+   font-family: 'Ubuntu';
    font-size: 16px;
 }
 
@@ -13,12 +13,13 @@ body {
 .container {
    width: 100%;
    height: 100%;
+   display: flex;
+   padding: 20px;
 }
 
 .container h1 {
    font-size: 4em;
    text-align: center;
-   padding: 50px;
 }
 
 .board {
@@ -34,16 +35,16 @@ body {
    height: 200px;
 }
 
-#row-1 {
+#row-0 {
    border-bottom: 2px solid black;
 }
 
-#row-2 {
+#row-1 {
    border-top: 2px solid black;
    border-bottom: 2px solid black;
 }
 
-#row-3 {
+#row-2 {
    border-top: 2px solid black;
 }
 
@@ -55,29 +56,35 @@ body {
    height: 200px;
 }
 
+#col-0 {
+   border-right: 2px solid black;
+}
+
 #col-1 {
+   border-left: 2px solid black;
    border-right: 2px solid black;
 }
 
 #col-2 {
    border-left: 2px solid black;
-   border-right: 2px solid black;
 }
 
-#col-3 {
-   border-left: 2px solid black;
+.position {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   width: 100%;
+   cursor: pointer;
 }
 
-.hidden {
-   display: none;
-}
-
-.symbol {
+.x {
+   height: 100%;
+   width: 100%;
    display: flex;
    align-items: center;
    justify-content: center;
    transform: rotate(45deg);
-   cursor: pointer;
 }
 
 .x-1 {
