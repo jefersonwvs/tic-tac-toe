@@ -1,12 +1,21 @@
 'use strict';
 
-const board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+const board = [' ', ' ', ' ',
+               ' ', ' ', ' ',
+               ' ', ' ', ' '];
 
 let isPlaying = true;
 const scores = [0, 0];
 let activePlayer = 0;
 
+const playerO = document.querySelector('#player-0');
+const playerX = document.querySelector("#player-1");
+const scorePlayerX = document.querySelector('.score--1');
+const scorePlayerO = document.querySelector('.score--0');
 const positions = document.querySelectorAll('.position');
+
+scorePlayerX.textContent = scores[1];
+scorePlayerO.textContent = scores[0];
 newGame();
 
 for (let i = 0; i < positions.length; i++) {
@@ -26,12 +35,20 @@ for (let i = 0; i < positions.length; i++) {
             board[i] = mark;
 
             if (thePlayerWon(activePlayer)) {
+               const scoreWinner = document.querySelector(
+                  `.score--${activePlayer}`
+               );
                console.log(`Player ${activePlayer} is the winner!`);
                scores[activePlayer]++;
+               scoreWinner.textContent = scores[activePlayer] + "";
                isPlaying = false;
             } else {
                if (board.every((mark) => mark !== ' ')) {
-                  console.log('Temos um empate!');
+                  //console.log('Temos um empate!');
+                  scores[1]++;
+                  scores[0]++;
+                  scorePlayerX.textContent = scores[1];
+                  scorePlayerO.textContent = scores[0];
                   isPlaying = false;
                } else {
                   activePlayer = activePlayer === 1 ? 0 : 1;
@@ -64,7 +81,6 @@ function newGame() {
       board[i] = ' ';
       positions[i].innerHTML = ' ';
    }
-
    activePlayer = activePlayer === 1 ? 0 : 1;
    isPlaying = true;
 }

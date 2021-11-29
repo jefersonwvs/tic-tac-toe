@@ -11,15 +11,43 @@ body {
 }
 
 .container {
-   width: 100%;
-   height: 100%;
+   padding: 40px;
    display: flex;
-   padding: 20px;
+   justify-content: space-evenly;
 }
 
-.container h1 {
+.info {
+   padding: 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   /* border: 1px solid red; */
+}
+
+.info h1 {
    font-size: 4em;
    text-align: center;
+   margin-bottom: 30px;
+}
+
+/* .status {
+   border: 1px solid orange;
+} */
+
+.player {
+   margin: 20px 0px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.player h2 {
+   font-size: 1.5em;
+}
+
+.player p {
+   padding: 10px;
+   font-size: 3em;
 }
 
 .board {
@@ -78,15 +106,6 @@ body {
    cursor: pointer;
 }
 
-.x {
-   height: 100%;
-   width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   transform: rotate(45deg);
-}
-
 .x-1 {
    position: absolute;
    width: 10px;
@@ -101,6 +120,15 @@ body {
    height: 10px;
    background-color: #090446;
    border-radius: 10px;
+}
+
+.x {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transform: rotate(45deg);
 }
 
 .circle {
